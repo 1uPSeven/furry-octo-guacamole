@@ -27,8 +27,9 @@ public class PuntosTuristicos extends AppCompatActivity {
     ArrayList<lugares> listDatos;
     FirebaseDatabase FBData;
     DatabaseReference DBReference,DBMostrar;
-    String lugar = "Coquimbo";
+    String lugar;
     RecyclerView recycler;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +37,22 @@ public class PuntosTuristicos extends AppCompatActivity {
         setContentView(R.layout.activity_puntos_turisticos);
 
         Intent inten = this.getIntent();
-
+        this.lugar = inten.getStringExtra("lugar".toString());
         iniciar_firebase();
         llenarLista();
-
         recycler = (RecyclerView) findViewById(R.id.Recycler);
         recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
 
+
+        Adapter adapter = new Adapter(listDatos);
+        adapter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+            }
+        });
+        recycler.setAdapter(adapter);
 
     }
 
@@ -63,13 +73,13 @@ public class PuntosTuristicos extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String previousChildName) {
 
-                for(DataSnapshot datasnapshot: dataSnapshot.getChildren()){
+               for(DataSnapshot datasnapshot: dataSnapshot.getChildren()){
                     cont[0]++;
 
                     System.out.println(dataSnapshot.getValue());
 
-                    lugares lugaresquehablan = dataSnapshot.getValue(lugares.class);
-                    listDatos.add(lugaresquehablan);
+                   lugares lugaresquehablan = dataSnapshot.getValue(lugares.class);   //ERROR
+                   listDatos.add(lugaresquehablan);
                     break;
                 }
                 Adapter adapter = new Adapter(listDatos);
@@ -81,6 +91,7 @@ public class PuntosTuristicos extends AppCompatActivity {
                     }
                 });
                 recycler.setAdapter(adapter);
+
             }
 
             @Override

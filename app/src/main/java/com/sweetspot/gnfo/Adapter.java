@@ -28,8 +28,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolderDatos> imple
 
     @Override
     public void onBindViewHolder(ViewHolderDatos holder, int position) {
-        holder.etnom.setText(listDatos.get(position).getNombre());
-        holder.etcodigo.setText("Codigo: "+listDatos.get(position).getCodigo());
+        holder.etnom.setText(listDatos.get(position).getNomLugar());
+        holder.etcodigo.setText("Codigo: "+listDatos.get(position).getCode());
 
 
     }

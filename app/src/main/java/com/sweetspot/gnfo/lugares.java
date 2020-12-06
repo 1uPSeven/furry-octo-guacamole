@@ -3,77 +3,54 @@ import java.io.Serializable;
 
 
 
+public class lugares implements Serializable {
 
-public class lugares implements Serializable{
-
-    private String nombre;
-    private String descripcion;
-    private String codigo;
-    private String latitud;
-    private String longitud;
+    private String nomLugar;
+    private String descLugar;
+    private String code;
     private String lugar;
 
-    public lugares(){
-        
+    public lugares(){}
+    public lugares(String code, String descLugar, String lugar, String nomLugar) {
+
+        this.code = code;
+        this.descLugar = descLugar;
+
+        this.lugar = lugar;
+        this.nomLugar = nomLugar;
     }
 
-    public lugares(String nombre, String descripcion, String codigo, String latitud, String longitud, String lugar){
-
-        this.codigo=codigo;
-        this.descripcion=descripcion;
-        this.nombre=nombre;
-        this.latitud=latitud;
-        this.longitud=longitud;
-        this.lugar=lugar;
-
+    public String getNomLugar() {
+        return nomLugar;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getDescLugar() {
+        return descLugar;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getCode() {
+        return code;
     }
 
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public String getLatitud() {
-        return latitud;
-    }
-
-    public String getLongitud() {
-        return longitud;
-    }
 
     public String getLugar() {
         return lugar;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNomLugar(String nomLugar) {
+        this.nomLugar = nomLugar;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescLugar(String descLugar) {
+        this.descLugar = descLugar;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public void setLatitud(String latitud) {
-        this.latitud = latitud;
-    }
-
-    public void setLongitud(String longitud) {
-        this.longitud = longitud;
-    }
 
     public void setLugar(String lugar) {
         this.lugar = lugar;
     }
 }
-

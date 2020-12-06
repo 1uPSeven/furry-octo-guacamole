@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Button btnInicio;
     Spinner dropdown;
 
+    String lugar;
+
     static final String[] paths = {"Seleccione..","Coquimbo","La Serena","Ovalle"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,16 +47,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         switch (position){
             case 0:
-
+                    btnInicio.setEnabled(false);
                 break;
             case 1:
-
+                    btnInicio.setEnabled(true);
+                    this.lugar = "COQUIMBO";
                 break;
             case 2:
-
+                btnInicio.setEnabled(true);
+                this.lugar = "LASERENA";
                 break;
             case 3:
-
+                btnInicio.setEnabled(true);
+                this.lugar = "OVALLE";
                 break;
         }
 
@@ -68,6 +73,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void mostrarLugares(){
 
         Intent intento = new Intent(this, PuntosTuristicos.class);
+
+        intento.putExtra("lugar", lugar);
+
         startActivity(intento);
     }
 
