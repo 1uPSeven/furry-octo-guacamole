@@ -9,15 +9,19 @@ public class lugares implements Serializable {
     private String descLugar;
     private String code;
     private String lugar;
+    private String latitud;
+    private String longitud;
 
     public lugares(){}
-    public lugares(String code, String descLugar, String lugar, String nomLugar) {
+    public lugares(String code, String descLugar, String lugar, String nomLugar, String latitud, String longitud) {
 
         this.code = code;
         this.descLugar = descLugar;
 
         this.lugar = lugar;
         this.nomLugar = nomLugar;
+        this.latitud = latitud;
+        this.longitud = longitud;
     }
 
     public String getNomLugar() {
@@ -37,6 +41,10 @@ public class lugares implements Serializable {
         return lugar;
     }
 
+    public String getLatitud(){ return latitud;}
+
+    public String getLongitud(){ return longitud;}
+
     public void setNomLugar(String nomLugar) {
         this.nomLugar = nomLugar;
     }
@@ -52,5 +60,13 @@ public class lugares implements Serializable {
 
     public void setLugar(String lugar) {
         this.lugar = lugar;
+    }
+
+    public void setLatitud(String latitud) {
+        this.latitud = latitud;
+    }
+
+    public void setLongitud(String longitud) {
+        this.longitud = longitud;
     }
 }

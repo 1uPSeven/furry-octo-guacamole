@@ -29,6 +29,9 @@ public class PuntosTuristicos extends AppCompatActivity {
     DatabaseReference DBReference,DBMostrar;
     String lugar;
     RecyclerView recycler;
+    String enviarCodigo;
+    String enviarLugar;
+
 
 
     @Override
@@ -42,17 +45,6 @@ public class PuntosTuristicos extends AppCompatActivity {
         llenarLista();
         recycler = (RecyclerView) findViewById(R.id.Recycler);
         recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
-
-
-        Adapter adapter = new Adapter(listDatos);
-        adapter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-            }
-        });
-        recycler.setAdapter(adapter);
 
     }
 
@@ -86,7 +78,9 @@ public class PuntosTuristicos extends AppCompatActivity {
                 adapter.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        enviarCodigo = listDatos.get(recycler.getChildAdapterPosition(view)).getCode();
+                        enviarLugar = listDatos.get(recycler.getChildAdapterPosition(view)).getLugar();
+                        mostrarDetalle();
 
                     }
                 });
@@ -113,9 +107,17 @@ public class PuntosTuristicos extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
+
         });
     }
+    public void mostrarDetalle(){
+        Intent intento = new Intent(this, DetalleLugar.class);
 
+        intento.putExtra("code", enviarCodigo);
+        intento.putExtra("lugarcito", enviarLugar);
+
+        startActivity(intento);
+    }
 
 
 
