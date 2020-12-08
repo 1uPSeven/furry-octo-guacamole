@@ -42,13 +42,8 @@ public class DetalleLugar extends AppCompatActivity {
         this.recibirLugar = inten.getStringExtra("lugarcito".toString());
         this.recibirCodigo = inten.getStringExtra("code".toString());
 
-
         txtNom = (EditText) findViewById(R.id.idLugar);
-        txtCode = (EditText) findViewById(R.id.idCodigo);
         txtDesc = (EditText) findViewById(R.id.idDesc);
-
-        txtNom.setText(recibirLugar);
-        txtCode.setText(recibirCodigo);
 
         bMapa = (Button) findViewById(R.id.btnMapa);
         bMapa.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +82,7 @@ public class DetalleLugar extends AppCompatActivity {
                     lugares lugaresquehablan = dataSnapshot.getValue(lugares.class);   //ERROR
                     txtDesc.setText(lugaresquehablan.getDescLugar().toString());
 
+                    txtNom.setText(lugaresquehablan.getNomLugar().toString());
                     enviarLatitud = lugaresquehablan.getLatitud();
                     enviarLongitud = lugaresquehablan.getLongitud();
 

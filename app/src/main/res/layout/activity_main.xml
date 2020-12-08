@@ -4,27 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondoinicio"
+    android:textAlignment="center"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/msjeBienvenida"
-        android:layout_width="262dp"
-        android:layout_height="288dp"
+        android:layout_width="319dp"
+        android:layout_height="124dp"
+        android:background="#3E8F8F8F"
         android:text="¡Bienvenido a Gnfo!"
-        android:textSize="36sp"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.149" />
+        app:layout_constraintVertical_bias="0.076" />
 
     <Spinner
         android:id="@+id/spinner1"
-        android:layout_width="175dp"
-        android:layout_height="48dp"
-        android:background="@android:drawable/btn_dropdown"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/select"
         android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,14 +40,18 @@
 
     <Button
         android:id="@+id/btnGo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/btngo"
         android:text="GO!"
+        android:textColor="#EFEFEF"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.91" />
+        app:layout_constraintVertical_bias="0.95" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

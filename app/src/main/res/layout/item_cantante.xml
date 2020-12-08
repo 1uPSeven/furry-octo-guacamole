@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="nomLugar"
+            android:textColor="#FFFFFF"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="34dp" />
 
@@ -38,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="codigo"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/lugar"
             app:layout_constraintTop_toBottomOf="@+id/lugar" />
     </androidx.constraintlayout.widget.ConstraintLayout>

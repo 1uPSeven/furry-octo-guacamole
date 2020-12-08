@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {    //SI SELECCIONO ESTO ALGO PASARÁ POH
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {    //case
 
         switch (position){
             case 0:
